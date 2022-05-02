@@ -1,6 +1,6 @@
-@extends('admin.layout.app')
+@extends('client.layout.app')
 @section('content')
-<h3>This is Admin Home Page</h3>
+<h3>This is Client Home Page</h3>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"

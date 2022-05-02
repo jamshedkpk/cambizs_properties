@@ -1,12 +1,12 @@
 <?php
-
 namespace App\Models;
-
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Role;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -41,4 +41,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+// Relationship b/w user and role
+public function role()
+{
+    return $this->belongsTo(Role::class);
+}
+// Return role of user wheither it is a admin,landlord,agent or client
+public function checkRole()
+{
+    $userid=Auth::id(); 
+    $role=User::join('roles','roles.id','=','users.role_id')
+    ->where('users.id','=',$userid)
+    ->first();
+    return $role->name;
+}
 }
