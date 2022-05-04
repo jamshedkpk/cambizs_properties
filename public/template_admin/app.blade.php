@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Property Managment System</title>
+    <title>Corona Admin</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset('template_admin/assets/vendors/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('template_admin/assets/vendors/css/vendor.bundle.base.css')}}">
@@ -21,16 +21,7 @@
     <link rel="stylesheet" href="{{asset('template_admin/assets/css/style.css')}}">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{asset('template_admin/assets/images/favicon.png')}}" />
-    <style>
-      .form-control:focus{
-        color:white;
-      }
-      .dropdown-divider{
-        height:2px;
-        background-color: white;
-      }
 
-    </style>
   </head>
   <body>
     <div class="container-scroller">
@@ -97,27 +88,24 @@
                   </div>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item"  href="{{ route('logout') }}" onclick="event.preventDefault();
-                  document.getElementById('logout-form').submit();">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-logout text-danger"></i>
-                      </div>
+                <a href="#" class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-dark rounded-circle">
+                      <i class="mdi mdi-calendar-today text-success"></i>
                     </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Log Out</p>
-                    </div>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                      @csrf
-                  </form>
-                  </a>
-                  <div class="dropdown-divider"></div>
+                  </div>
+                  <div class="preview-item-content">
+                    <p class="preview-subject ellipsis mb-1 text-small">To-do list</p>
+                  </div>
+                </a>
               </div>
             </div>
           </li>
-          <div class="dropdown-divider"></div>
+          <li class="nav-item nav-category">
+            <span class="nav-link">Navigation</span>
+          </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{route('home')}}">
+            <a class="nav-link" href="index.html">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -125,116 +113,79 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" data-bs-toggle="collapse" href="#landlord-li" aria-expanded="false" aria-controls="ui-basic">
-              <span class="menu-icon">
-                <i class="mdi mdi-account
-                "></i>
-              </span>
-              <span class="menu-title">Landlord Managment</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="landlord-li">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#">View Landlords</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Add Landlord</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" data-bs-toggle="collapse" href="#agent-ui" aria-expanded="false" aria-controls="ui-basic">
-              <span class="menu-icon">
-                <i class="mdi mdi-account-box"></i>
-              </span>
-              <span class="menu-title">Agent Managment</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="agent-ui">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#">View Agents</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Add Agent</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" data-bs-toggle="collapse" href="#client-ui" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <span class="menu-icon">
                 <i class="mdi mdi-laptop"></i>
               </span>
-              <span class="menu-title">Client Managment</span>
+              <span class="menu-title">Basic UI Elements</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="client-ui">
+            <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#">View Clients</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Add Client</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{asset('template_admin/pages/ui-features/buttons.html')}}">Buttons</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{asset('template_admin/pages/ui-features/dropdowns.html')}}">Dropdowns</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{asset('template_admin/pages/ui-features/typography.html')}}">Typography</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" data-bs-toggle="collapse" href="#role-ui" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" href="{{asset('template_admin/pages/forms/basic_elements.html')}}">
               <span class="menu-icon">
-                <i class="mdi mdi-step-forward
-                "></i>
+                <i class="mdi mdi-playlist-play"></i>
               </span>
-              <span class="menu-title">Role Managment</span>
+              <span class="menu-title">Form Elements</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{asset('template_admin/pages/tables/basic-table.html')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-table-large"></i>
+              </span>
+              <span class="menu-title">Tables</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{asset('template_admin/pages/charts/chartjs.html')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-chart-bar"></i>
+              </span>
+              <span class="menu-title">Charts</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{asset('template_admin/pages/icons/mdi.html')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-contacts"></i>
+              </span>
+              <span class="menu-title">Icons</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <span class="menu-icon">
+                <i class="mdi mdi-security"></i>
+              </span>
+              <span class="menu-title">User Pages</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="role-ui">
+            <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#">View Roles</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Add Role</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{asset('template_admin/pages/samples/blank-page.html')}}"> Blank Page </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{asset('template_admin/pages/samples/error-404.html')}}"> 404 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{asset('template_admin/pages/samples/error-500.html')}}"> 500 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{asset('template_admin/pages/samples/login.html')}}"> Login </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{asset('template_admin/pages/samples/register.html')}}"> Register </a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" data-bs-toggle="collapse" href="#catagory-ui" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
               <span class="menu-icon">
-                <i class="mdi mdi-store
-                "></i>
+                <i class="mdi mdi-file-document-box"></i>
               </span>
-              <span class="menu-title">Catagory Managment</span>
-              <i class="menu-arrow"></i>
+              <span class="menu-title">Documentation</span>
             </a>
-            <div class="collapse" id="catagory-ui">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#">View Catagories</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Add Catagory</a></li>
-              </ul>
-            </div>
           </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" data-bs-toggle="collapse" href="#sub-catagory-ui" aria-expanded="false" aria-controls="ui-basic">
-              <span class="menu-icon">
-                <i class="mdi mdi-subdirectory-arrow-right
-
-                "></i>
-              </span>
-              <span class="menu-title">Sub Catagory Managment</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="sub-catagory-ui">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#">View Sub Catagories</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Add Sub Catagory</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" data-bs-toggle="collapse" href="#property-ui" aria-expanded="false" aria-controls="ui-basic">
-              <span class="menu-icon">
-                <i class="mdi mdi-weather-rainy"></i>
-              </span>
-              <span class="menu-title">Property Managment</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="property-ui">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#">View Properties</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Add Property</a></li>
-              </ul>
-            </div>
-          </li>
-            
         </ul>
       </nav>
       <!-- partial -->
@@ -242,7 +193,7 @@
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar p-0 fixed-top d-flex flex-row">
           <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{asset('template_admin/assets/images/logo-mini.svg')}}" alt="logo" /></a>
+            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
           </div>
           <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -256,6 +207,52 @@
               </li>
             </ul>
             <ul class="navbar-nav navbar-nav-right">
+              <li class="nav-item dropdown d-none d-lg-block">
+                <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-bs-toggle="dropdown" aria-expanded="false" href="#">+ Create New Project</a>
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
+                  <h6 class="p-3 mb-0">Projects</h6>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <div class="preview-icon bg-dark rounded-circle">
+                        <i class="mdi mdi-file-outline text-primary"></i>
+                      </div>
+                    </div>
+                    <div class="preview-item-content">
+                      <p class="preview-subject ellipsis mb-1">Software Development</p>
+                    </div>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <div class="preview-icon bg-dark rounded-circle">
+                        <i class="mdi mdi-web text-info"></i>
+                      </div>
+                    </div>
+                    <div class="preview-item-content">
+                      <p class="preview-subject ellipsis mb-1">UI Development</p>
+                    </div>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <div class="preview-icon bg-dark rounded-circle">
+                        <i class="mdi mdi-layers text-danger"></i>
+                      </div>
+                    </div>
+                    <div class="preview-item-content">
+                      <p class="preview-subject ellipsis mb-1">Software Testing</p>
+                    </div>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <p class="p-3 mb-0 text-center">See all projects</p>
+                </div>
+              </li>
+              <li class="nav-item nav-settings d-none d-lg-block">
+                <a class="nav-link" href="#">
+                  <i class="mdi mdi-view-grid"></i>
+                </a>
+              </li>
               <li class="nav-item dropdown border-left">
                 <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                   <i class="mdi mdi-email"></i>
@@ -349,9 +346,7 @@
                   <div class="navbar-profile">
                     <img class="img-xs rounded-circle" src="template_admin/assets/images/faces/face15.jpg" alt="">
                     <p class="mb-0 d-none d-sm-block navbar-profile-name">
-                      <strong>
-                        Mr : {{ Auth::user()->name }}
-                      </strong>
+                      {{ Auth::user()->name }}
                     </p>
                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                   </div>

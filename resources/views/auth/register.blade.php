@@ -19,7 +19,10 @@
     <!-- End layout styles -->
     <link rel="shortcut icon" href="template_admin/assets/images/favicon.png" />
     <style>
-
+      .form-control:focus
+      {
+        color:white;
+      }
     </style>
   </head>
   <body>
@@ -34,19 +37,39 @@
                   @csrf
                   <div class="form-group">
                     <label>Name:</label>
-                    <input type="text" class="form-control p_input"  name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                    <input type="text" class="form-control p_input"  name="name"  value="{{ old('name') }}">
+                    @error('name')
+                    <span class="text-danger">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
                   </div>
                   <div class="form-group">
                     <label>Email:</label>
-                    <input type="email" class="form-control p_input">
+                    <input type="email"  class="form-control p_input" name="email" value="{{ old('email') }}">
+                    @error('email')
+                    <span class="text-danger">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
                   </div>
                   <div class="form-group">
                     <label>Password:</label>
-                    <input type="password" class="form-control p_input"  name="password" value="{{ old('password') }}" required autocomplete="password">
+                    <input type="password" class="form-control p_input"  name="password" value="{{ old('password') }}">
+                    @error('password')
+                    <span class="text-danger">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
                   </div>
                   <div class="form-group">
                     <label>Confirm Passowrd:</label>
-                    <input type="password" class="form-control p_input"  name="password_confirmation" value="{{ old('password_confirmation') }}" required autocomplete="password_confirmation">
+                    <input type="password" class="form-control p_input"  name="password_confirmation" value="{{ old('password_confirmation') }}">
+                    @error('password_confirmation')
+                    <span class="text-danger">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
                   </div>
                   <div class="form-group d-flex align-items-center justify-content-between">
                     <div class="form-check">
@@ -56,11 +79,12 @@
                     <a href="#" class="forgot-pass">Forgot password</a>
                   </div>
                   <div class="text-center">
-                    <button type="submit" class="btn btn-primary btn-block enter-btn">Sign Up</button>
+                    <button type="submit" class="btn btn-primary btn-block enter-btn  w-100">Sign Up</button>
                   </div>
+                </form>
+
                   <p class="sign-up text-center">Already have an Account?<a href="{{route('login')}}"> Sign In</a></p>
                   <p class="terms">By creating an account you are accepting our<a href="#"> Terms & Conditions</a></p>
-                </form>
               </div>
             </div>
           </div>
