@@ -142,7 +142,9 @@
         </a>
         <div class="collapse" id="country-ui">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="{{route('country.index')}}">View Countries</a></li>
+            <li class="nav-item"> 
+            <router-link class="nav-link" to="/country">View Countries</router-link>
+            </li>
             <li class="nav-item"> <a class="nav-link" href="#">Add Country</a></li>
           </ul>
         </div>

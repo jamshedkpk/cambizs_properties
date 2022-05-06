@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Property Managment System</title>
 <!-- plugins:css -->
+<link rel="stylesheet" href="{{asset('css/app.css')}}">
 <link rel="stylesheet" href="{{asset('template_admin/assets/vendors/mdi/css/materialdesignicons.min.css')}}">
 <link rel="stylesheet" href="{{asset('template_admin/assets/vendors/css/vendor.bundle.base.css')}}">
 <!-- endinject -->
@@ -36,4 +37,4 @@ color:white;
 }
 </style>
 </head>
-<body>
+<body id="app">

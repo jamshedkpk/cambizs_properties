@@ -1,7 +1,7 @@
 @extends('admin.layout.app')
 @section('content')
 <h3 class="text-center">List Of Countries</h3>
-<button class="btn btn-primary">Add New Country</button>
+<router-link to="/">Add New Country</router-link>
 <hr>
 @if(!$countries->isEmpty())
 <table class="table">

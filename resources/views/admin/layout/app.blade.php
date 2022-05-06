@@ -194,6 +194,7 @@
                     </div>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                       @csrf
+                    
                   </form>
                   </a>
                   <div class="dropdown-divider"></div>
@@ -208,9 +209,8 @@
         </nav>
         <!-- partial -->
         <div class="main-panel">
-          
           <div class="content-wrapper">
-           @yield('content')
+            <router-view></router-view>
           </div>
           <!-- content-wrapper ends -->
 @include('admin.layout.footer')
