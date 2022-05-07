@@ -160,7 +160,9 @@
         </a>
         <div class="collapse" id="state-ui">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="#">View States</a></li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/state">View States</router-link>
+            </li>
             <li class="nav-item"> <a class="nav-link" href="#">Add State</a></li>
           </ul>
         </div>
@@ -176,7 +178,9 @@
         </a>
         <div class="collapse" id="city-ui">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="#">View Cities</a></li>
+            <li class="nav-item"> 
+              <router-link class="nav-link" to="/city">View Cities</router-link>
+            </li>
             <li class="nav-item"> <a class="nav-link" href="#">Add City</a></li>
           </ul>
         </div>
