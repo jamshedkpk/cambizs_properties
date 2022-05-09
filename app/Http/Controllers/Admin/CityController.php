@@ -9,7 +9,6 @@ class CityController extends Controller
 public function index()
 {
 $cities=City::with('country')->get();
-//return $cities;
-return response()->json(['status'=>200,'city'=>$cities]);
+return view('city.city_index')->with(['cities'=>$cities]);
 }
 }

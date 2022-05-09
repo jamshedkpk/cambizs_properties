@@ -10,6 +10,6 @@ class CountryController extends Controller
 public function index()
 {
 $countries=Country::all();
-return response()->json(['status'=>200,'country'=>$countries]);
+return view('country.country_index')->with(['countries'=>$countries]);
 }
 }
