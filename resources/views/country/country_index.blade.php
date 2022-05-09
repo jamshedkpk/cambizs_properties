@@ -1,10 +1,15 @@
 @extends('admin.layout.app')
 @section('content')
-<h3 class="text-center">Welcome To The Countries Section</h3>
-<br>
-<br>
-<a href="{{route('country-create')}}" class="btn btn-primary btn-sm">Add New Country</a>
+<div class="container">
+<div class="row">
+<div class="col-md-10 offset-1">
+<h3 class="text-center">Welcome To The Country Section</h3>
+<a href="{{route('country-create')}}" class="btn btn-primary">Add New Country</a>
+</div>
+</div>
 <hr>
+<div class="row">
+<div class="col-md-10 offset-1">
 @if(!$countries->isEmpty())
 <table class="table" id="table">
 <thead>
@@ -27,10 +32,10 @@ Delete
 </tr>
 </thead>
 <tbody>
-@foreach($countries as $country)
+@foreach($countries as $index=>$country)
 <tr>
 <td>
-{{ $country->id }}
+{{ $index+1 }}
 </td>
 <td>
 {{ $country->name }}
@@ -63,5 +68,16 @@ Delete
 </tbody>
 </table>
 @endif
+</div>
+</div>
+</div>
 </body>
+@endsection
+
+@section('extra-js')
+<script>
+$(document).ready(function(){
+$('#table').DataTable();
+});
+</script>
 @endsection

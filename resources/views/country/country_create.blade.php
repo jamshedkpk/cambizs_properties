@@ -1,11 +1,9 @@
 @extends('admin.layout.app')
 @section('content')
-<br>
-<br>
 <div class="container mt-5">
 <div class="row">
 <div class="col-md-8 offset-2">
-<h3 class="text-center">Welcome To The Countries Section</h3>
+<h3 class="text-center">Welcome To The Country Section</h3>
 </div>
 </div>
 <hr>    
@@ -17,11 +15,21 @@
         @csrf
         <div class="form-group">
           <label for="name">Country Name:</label>
-          <input type="text" class="form-control" id="name" placeholder="Country Name" name="name">
+          <input type="text" value="{{old('name')}}" class="form-control" id="name" placeholder="Country Name" name="name">
+          @error('name')
+          <strong class="text-danger">
+            {{ $message }}
+          </strong>
+          @enderror
         </div>
         <div class="form-group">
           <label for="code">Country Code:</label>
-          <input type="text" class="form-control" id="code" placeholder="Country Code" name="code">
+          <input type="text" value="{{old('code')}}" class="form-control" id="code" placeholder="Country Code" name="code">
+          @error('code')
+          <strong class="text-danger">
+            {{ $message }}
+          </strong>
+          @enderror
         </div>
         <button type="submit" class="btn btn-primary me-2">Submit</button>
         <button class="btn btn-secondary">Cancel</button>
@@ -37,9 +45,10 @@
 <script>
 swal({
   title: "Good job!",
-  text: "Record is stored!",
+  text: "{{ $message }}",
   icon: "success",
-  button: "Aww yiss!",
+  timer:2000,  
+  button: "OK",
 });
 </script>
 @endif

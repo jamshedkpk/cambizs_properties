@@ -1,12 +1,17 @@
 @extends('admin.layout.app')
 @section('content')
+<div class="container">
+<div class="row">
+<div class="col-md-10 offset-1">
 <h3 class="text-center">Welcome To The State Section</h3>
-<br>
-<br>
-<button class="btn btn-primary">Add New State</button>
+<a href="{{route('state-create')}}" class="btn btn-primary">Add New State</a>
+</div>
+</div>
 <hr>
+<div class="row">
+<div class="col-md-10 offset-1">
 @if(!$states->isEmpty())
-<table class="table">
+<table class="table" id="table">
 <thead>
 <tr>
 <th>
@@ -27,10 +32,10 @@ Delete
 </tr>
 </thead>
 <tbody>
-@foreach($states as $state)
+@foreach($states as $index=> $state)
 <tr>
 <td>
-{{ $state->id }}
+{{ $index+1 }}
 </td>
 <td>
 {{ $state->name }}
@@ -63,5 +68,15 @@ Delete
 </tbody>
 </table>
 @endif
+</div>
+</div>
+</div>
 </body>
+@endsection
+@section('extra-js')
+<script>
+$(document).ready(function(){
+$('#table').DataTable();
+});
+</script>
 @endsection

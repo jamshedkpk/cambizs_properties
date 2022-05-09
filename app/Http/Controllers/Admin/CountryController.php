@@ -20,10 +20,11 @@ return view('country.country_create');
 // Store a new country
 public function store(Request $request)
 {
-$country=new Country();
-$country->name=$request->name;
-$country->code=$request->code;
-$save=$country->save();
+$country=$this->validate($request,[
+'name'=>'required|regex:/^[a-zA-Z ]+$/',
+'code'=>'required'
+]);
+$save=Country::create($country);
 {
 if($save)
 {

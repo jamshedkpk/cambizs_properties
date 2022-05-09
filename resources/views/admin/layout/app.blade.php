@@ -199,7 +199,7 @@
                 <li class="nav-item"> 
                     <a href="{{route('country-index')}}" class="nav-link">View Countries</a>
                 </li>
-                <li class="nav-item"> <a class="nav-link" href="#">Add Country</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('country-create')}}">Add Country</a></li>
               </ul>
             </div>
           </li>
@@ -217,7 +217,7 @@
                 <li class="nav-item">
                     <a href="{{route('state-index')}}" class="nav-link">View States</a>
                 </li>
-                <li class="nav-item"> <a class="nav-link" href="#">Add State</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('state-create')}}">Add State</a></li>
               </ul>
             </div>
           </li>
@@ -235,7 +235,7 @@
                 <li class="nav-item"> 
                     <a href="{{route('city-index')}}" class="nav-link">View Cities</a>
                 </li>
-                <li class="nav-item"> <a class="nav-link" href="#">Add City</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('city-create')}}">Add City</a></li>
               </ul>
             </div>
           </li>
@@ -526,7 +526,8 @@
     <script src="{{asset('template_admin/assets/js/settings.js')}}"></script>
     <script src="{{asset('template_admin/assets/js/todolist.js')}}"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
+    <link rel="stylesheet" href="{{asset('template_admin/DataTables/datatables.min.css')}}">
+    <script src="{{asset('template_admin/DataTables/datatables.min.js')}}"></script>
     <!-- endinject -->
     <!-- Custom js for this page -->
     <script src="{{asset('template_admin/assets/js/dashboard.js')}}"></script>
