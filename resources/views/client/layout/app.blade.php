@@ -8,5 +8,6 @@
 </head>
 <body>
     @yield('content')
+    @yield('extra-js')
 </body>
 </html>

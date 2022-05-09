@@ -1,6 +1,7 @@
 @extends('admin.layout.app')
 @section('content')
 <h3 class="text-center">Welcome To The Cities Section</h3>
+<br><br>
 <button class="btn btn-primary">Add New City</button>
 <hr>
 @if(!$cities->isEmpty())

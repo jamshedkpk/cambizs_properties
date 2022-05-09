@@ -1,6 +1,8 @@
 @extends('admin.layout.app')
 @section('content')
 <h3 class="text-center">Welcome To The State Section</h3>
+<br>
+<br>
 <button class="btn btn-primary">Add New State</button>
 <hr>
 @if(!$states->isEmpty())

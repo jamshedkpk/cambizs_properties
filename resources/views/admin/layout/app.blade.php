@@ -443,7 +443,7 @@
               <li class="nav-item dropdown">
                 <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
                   <div class="navbar-profile">
-                    <img class="img-xs rounded-circle" src="template_admin/assets/images/faces/face15.jpg" alt="">
+                    <img class="img-xs rounded-circle" src="{{asset('template_admin/assets/images/faces/face15.jpg')}}" alt="">
                     <p class="mb-0 d-none d-sm-block navbar-profile-name">
                       {{ Auth::user()->name }}
                     </p>
@@ -509,9 +509,9 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="{{asset('template_admin/assets/vendors/js/vendor.bundle.base.js')}}"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
+    <script src="{{ mix('js/app.js') }}"></script>
     <script src="{{asset('template_admin/assets/vendors/chart.js/Chart.min.js')}}"></script>
     <script src="{{asset('template_admin/assets/vendors/progressbar.js/progressbar.min.js')}}"></script>
     <script src="{{asset('template_admin/assets/vendors/jvectormap/jquery-jvectormap.min.js')}}"></script>
@@ -525,9 +525,12 @@
     <script src="{{asset('template_admin/assets/js/misc.js')}}"></script>
     <script src="{{asset('template_admin/assets/js/settings.js')}}"></script>
     <script src="{{asset('template_admin/assets/js/todolist.js')}}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <!-- endinject -->
     <!-- Custom js for this page -->
     <script src="{{asset('template_admin/assets/js/dashboard.js')}}"></script>
     <!-- End custom js for this page -->
+    @yield('extra-js')
   </body>
 </html>

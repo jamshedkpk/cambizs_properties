@@ -3,7 +3,7 @@
 <h3 class="text-center">Welcome To The Countries Section</h3>
 <br>
 <br>
-<button class="btn btn-primary btn-sm">Add New Country</button>
+<a href="{{route('country-create')}}" class="btn btn-primary btn-sm">Add New Country</a>
 <hr>
 @if(!$countries->isEmpty())
 <table class="table" id="table">
