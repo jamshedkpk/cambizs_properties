@@ -19,17 +19,9 @@ public function index()
     {
     return view('admin.layout.dashboard');    
     }
-    if($role=='landlord')
+    else if($role=='user')
     {
-    return view('landlord.layout.dashboard');    
-    }
-    if($role=='agent')
-    {
-    return view('agent.layout.dashboard');    
-    }
-    else if($role=='client')
-    {
-    return view('client.layout.dashboard');
+    return view('user.layout.dashboard');
     } 
     }
     else

@@ -44,13 +44,13 @@ Delete
 {{ $city->country->name }}
 </td>
 <td>
-<a href="">
+<a href="{{route('city-edit',$city->id)}}">
 <span class="mdi mdi-table-edit
 "></span>
 </a>
 </td>
 <td>
-<a href="">
+<a href="{{route('city-delete',$city->id)}}">
 <span class="mdi mdi-delete"></span>
 </a>
 </td>
@@ -75,6 +75,43 @@ Delete
 @endsection
 
 @section('extra-js')
+
+@if($message=Session::get('city-stored'))
+<script>
+swal({
+  title: "Good job!",
+  text: "{{ $message }}",
+  icon: "success",
+  timer:2000,  
+  button: "OK",
+});
+</script>
+@endif
+
+@if($message=Session::get('city-updated'))
+<script>
+swal({
+  title: "Good job!",
+  text: "{{ $message }}",
+  icon: "success",
+  timer:2000,  
+  button: "OK",
+});
+</script>
+@endif
+
+@if($message=Session::get('city-deleted'))
+<script>
+swal({
+title: "Good job!",
+text: "{{ $message }}",
+icon: "success",
+timer:2000,  
+button: "OK",
+});
+</script>
+@endif
+
 <script>
 $(document).ready(function(){
 $('#table').DataTable();

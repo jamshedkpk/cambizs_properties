@@ -28,7 +28,41 @@ $city=$this->validate($request,[
 $save=City::create($city);
 if($save)
 {
-return back()->with(['city stored'=>'City is successfully Stored!']);
+return redirect()->route('city-index')->with(['city-stored'=>'City is successfully Stored!']);
+}
+}
+
+// Edit a city
+public function edit($id)
+{
+$city=City::find($id);
+$countries=Country::all();
+return view('city.city_edit')->with(['city'=>$city,'countries'=>$countries]);    
+}
+
+// Update a city
+public function update(Request $request, $id)
+{
+$request->validate([
+'name'=>'required',
+'country_id'=>'required'
+]);
+$city=City::find($id);
+$update=$city->update(['name'=>$request->name,'country_id'=>$request->country_id]);
+if($update)
+{
+return redirect()->route('city-index')->with(['city-updated'=>'City is successfully Updated!']);
+}
+}
+
+// Delete a city
+public function destroy($id)
+{
+$city=City::find($id);
+$delete=$city->delete();
+if($delete)
+{
+return redirect()->route('city-index')->with(['city-deleted'=>'City is successfully Deleted!']);
 }
 }
 }

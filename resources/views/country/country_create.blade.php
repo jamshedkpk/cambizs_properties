@@ -41,15 +41,5 @@
 </div>
 @endsection
 @section('extra-js')
-@if($message=Session::get('country stored'))
-<script>
-swal({
-  title: "Good job!",
-  text: "{{ $message }}",
-  icon: "success",
-  timer:2000,  
-  button: "OK",
-});
-</script>
-@endif
+
 @endsection

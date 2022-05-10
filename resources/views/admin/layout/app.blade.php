@@ -525,7 +525,7 @@
     <script src="{{asset('template_admin/assets/js/misc.js')}}"></script>
     <script src="{{asset('template_admin/assets/js/settings.js')}}"></script>
     <script src="{{asset('template_admin/assets/js/todolist.js')}}"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="{{asset('template_admin/assets/js/sweetalert.min.js')}}"></script>
     <link rel="stylesheet" href="{{asset('template_admin/DataTables/datatables.min.css')}}">
     <script src="{{asset('template_admin/DataTables/datatables.min.js')}}"></script>
     <!-- endinject -->

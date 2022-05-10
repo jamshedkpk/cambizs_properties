@@ -3,7 +3,7 @@
 <div class="container mt-5">
 <div class="row">
 <div class="col-md-8 offset-2">
-<h3 class="text-center">Welcome To The Country Section</h3>
+<h3 class="text-center">Welcome To The State Section</h3>
 </div>
 </div>
 <hr>    
@@ -11,12 +11,12 @@
 <div class="col-md-8 offset-2">
   <div class="card">
     <div class="card-body">
-      <form method="post" class="forms-sample" action="{{route('country-update',$country->id)}}">
+      <form method="post" class="forms-sample" action="{{route('state-update',$state->id)}}">
         @csrf
         @method('PUT')
         <div class="form-group">
-          <label for="name">Country Name:</label>
-          <input type="text" name="name" class="form-control" id="name" placeholder="Country Name" value="{{$country->name}}">
+          <label for="name">State Name:</label>
+          <input type="text" name="name" class="form-control" id="name" placeholder="State Name" value="{{$state->name}}">
           @error('name')
           <strong class="text-danger">
             {{ $message }}
@@ -24,8 +24,14 @@
           @enderror
         </div>
         <div class="form-group">
-          <label for="code">Country Code:</label>
-          <input type="text" name="code" value="{{ $country->code }}" class="form-control" id="code" placeholder="Country Code" name="{{$country->code}}">
+          <label for="country_id">Country Code:</label>
+          <select name="country_id" id="country_id" class="form-control">
+            @foreach($countries as $country)
+            <option value="{{$country->id}}">
+              {{ $country->name }}
+            </option>            
+            @endforeach
+          </select>
           @error('code')
           <strong class="text-danger">
             {{ $message }}
