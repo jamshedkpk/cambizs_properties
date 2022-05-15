@@ -123,52 +123,7 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" data-bs-toggle="collapse" href="#landlord-li" aria-expanded="false" aria-controls="ui-basic">
-              <span class="menu-icon">
-                <i class="mdi mdi-account
-                "></i>
-              </span>
-              <span class="menu-title">Landlord Managment</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="landlord-li">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#">View Landlords</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Add Landlord</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" data-bs-toggle="collapse" href="#agent-ui" aria-expanded="false" aria-controls="ui-basic">
-              <span class="menu-icon">
-                <i class="mdi mdi-account-box"></i>
-              </span>
-              <span class="menu-title">Agent Managment</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="agent-ui">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#">View Agents</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Add Agent</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" data-bs-toggle="collapse" href="#client-ui" aria-expanded="false" aria-controls="ui-basic">
-              <span class="menu-icon">
-                <i class="mdi mdi-laptop"></i>
-              </span>
-              <span class="menu-title">Client Managment</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="client-ui">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#">View Clients</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Add Client</a></li>
-              </ul>
-            </div>
-          </li>
+
           <li class="nav-item menu-items">
             <a class="nav-link" data-bs-toggle="collapse" href="#role-ui" aria-expanded="false" aria-controls="ui-basic">
               <span class="menu-icon">
@@ -180,11 +135,43 @@
             </a>
             <div class="collapse" id="role-ui">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#">View Roles</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Add Role</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('role-index')}}">View Roles</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('role-create')}}">Add Role</a></li>
               </ul>
             </div>
           </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" data-bs-toggle="collapse" href="#catagory-ui" aria-expanded="false" aria-controls="ui-basic">
+              <span class="menu-icon">
+                <i class="mdi mdi-note-plus"></i>
+              </span>
+              <span class="menu-title">Catagory Managment</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="catagory-ui">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{{route('catagory-index')}}">View Catagories</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('catagory-create')}}">Add Catagory</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ads-ui" aria-expanded="false" aria-controls="ui-basic">
+              <span class="menu-icon">
+                <i class="mdi mdi-stop-circle
+                "></i>
+              </span>
+              <span class="menu-title">Ads Managment</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ads-ui">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{{route('ads-create')}}">View Ads</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('ads-create')}}">Add Ads</a></li>
+              </ul>
+            </div>
+          </li>
+
           <li class="nav-item menu-items">
             <a class="nav-link" data-bs-toggle="collapse" href="#country-ui" aria-expanded="false" aria-controls="ui-basic">
               <span class="menu-icon">
@@ -236,37 +223,6 @@
                     <a href="{{route('city-index')}}" class="nav-link">View Cities</a>
                 </li>
                 <li class="nav-item"> <a class="nav-link" href="{{route('city-create')}}">Add City</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" data-bs-toggle="collapse" href="#catagory-ui" aria-expanded="false" aria-controls="ui-basic">
-              <span class="menu-icon">
-                <i class="mdi mdi-note-plus"></i>
-              </span>
-              <span class="menu-title">Catagory Managment</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="catagory-ui">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#">View Catagories</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Add Catagory</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ads-ui" aria-expanded="false" aria-controls="ui-basic">
-              <span class="menu-icon">
-                <i class="mdi mdi-stop-circle
-                "></i>
-              </span>
-              <span class="menu-title">Ads Managment</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ads-ui">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#">View Ads</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Add Ads</a></li>
               </ul>
             </div>
           </li>

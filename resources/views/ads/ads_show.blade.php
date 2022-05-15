@@ -1,0 +1,1 @@
+ads_show page
