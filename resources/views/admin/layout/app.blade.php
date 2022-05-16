@@ -166,7 +166,7 @@
             </a>
             <div class="collapse" id="ads-ui">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{route('ads-create')}}">View Ads</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('ads-index')}}">View Ads</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{route('ads-create')}}">Add Ads</a></li>
               </ul>
             </div>
