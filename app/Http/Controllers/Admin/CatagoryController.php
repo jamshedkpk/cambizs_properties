@@ -22,20 +22,19 @@ public function store(Request $request)
 {
 $catagory=$this->validate($request,[
 'name'=>'required|regex:/^[a-zA-Z ]+$/',
-'code'=>'required'
 ]);
 $save=catagory::create($catagory);
 {
 if($save)
 {
-return redirect()->route('catagory-index')->with(['catagory-stored'=>'catagory is successfully Stored!']);
+return redirect()->route('catagory-index')->with(['catagory-stored'=>'Catagory is successfully Stored!']);
 }
 }
 }
 // Edit a catagory
 public function edit($id)
 {
-$catagory=catagory::find($id);
+$catagory=Catagory::find($id);
 return view('catagory.catagory_edit')->with(['catagory'=>$catagory]);    
 }
 
@@ -44,13 +43,12 @@ public function update(Request $request, $id)
 {
 $request->validate([
 'name'=>'required',
-'code'=>'required'
 ]);
-$catagory=catagory::find($id);
-$update=$catagory->update(['name'=>$request->name,'code'=>$request->code]);
+$catagory=Catagory::find($id);
+$update=$catagory->update(['name'=>$request->name]);
 if($update)
 {
-return redirect()->route('catagory-index')->with(['catagory-updated'=>'catagory is successfully Updated!']);
+return redirect()->route('catagory-index')->with(['catagory-updated'=>'Catagory is successfully Updated!']);
 }
 }
 
@@ -61,7 +59,7 @@ $catagory=catagory::find($id);
 $delete=$catagory->delete();
 if($delete)
 {
-return redirect()->route('catagory-index')->with(['catagory-deleted'=>'catagory is successfully Deleted!']);
+return redirect()->route('catagory-index')->with(['catagory-deleted'=>'Catagory is successfully Deleted!']);
 }
 }
 

@@ -10,7 +10,10 @@ public function run()
 Catagory::create
 ([
 'name'=>'Private Home',
-'name'=>'Commercial Property'
+]);
+Catagory::create
+([
+'name'=>'Commercial Property',
 ]);
 }
 }

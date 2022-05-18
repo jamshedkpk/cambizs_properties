@@ -22,20 +22,19 @@ public function store(Request $request)
 {
 $role=$this->validate($request,[
 'name'=>'required|regex:/^[a-zA-Z ]+$/',
-'code'=>'required'
 ]);
 $save=role::create($role);
 {
 if($save)
 {
-return redirect()->route('role-index')->with(['role-stored'=>'role is successfully Stored!']);
+return redirect()->route('role-index')->with(['role-stored'=>'Role is successfully Stored!']);
 }
 }
 }
 // Edit a role
 public function edit($id)
 {
-$role=role::find($id);
+$role=Role::find($id);
 return view('role.role_edit')->with(['role'=>$role]);    
 }
 
@@ -44,13 +43,12 @@ public function update(Request $request, $id)
 {
 $request->validate([
 'name'=>'required',
-'code'=>'required'
 ]);
-$role=role::find($id);
-$update=$role->update(['name'=>$request->name,'code'=>$request->code]);
+$role=Role::find($id);
+$update=$role->update(['name'=>$request->name]);
 if($update)
 {
-return redirect()->route('role-index')->with(['role-updated'=>'role is successfully Updated!']);
+return redirect()->route('role-index')->with(['role-updated'=>'Role is successfully Updated!']);
 }
 }
 
@@ -61,7 +59,7 @@ $role=role::find($id);
 $delete=$role->delete();
 if($delete)
 {
-return redirect()->route('role-index')->with(['role-deleted'=>'role is successfully Deleted!']);
+return redirect()->route('role-index')->with(['role-deleted'=>'Role is successfully Deleted!']);
 }
 }
 }

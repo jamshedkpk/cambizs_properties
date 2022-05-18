@@ -125,7 +125,7 @@ button: "OK",
 </script>
 @endif
 
-@if($message=Session::get('ad-deleted'))
+@if($message=Session::get('ads-deleted'))
 <script>
 swal({
 title: "Good job!",

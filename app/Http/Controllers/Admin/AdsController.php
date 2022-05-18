@@ -57,11 +57,11 @@ return redirect()->route('ad-index')->with(['ad-updated'=>'ad is successfully Up
 // Delete a ad
 public function destroy($id)
 {
-$ad=ad::find($id);
+$ad=Ads::find($id);
 $delete=$ad->delete();
 if($delete)
 {
-return redirect()->route('ad-index')->with(['ad-deleted'=>'ad is successfully Deleted!']);
+return redirect()->route('ads-index')->with(['ads-deleted'=>'Ads is successfully Deleted!']);
 }
 }
 
