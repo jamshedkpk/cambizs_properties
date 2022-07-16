@@ -7,17 +7,16 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\CatagoryController;
 use App\Http\Controllers\Admin\AdsController;
 
-Route::get('/', function () 
-{
-return view('home');
+
+Route::get('/', function () {
+    return view('welcome');
 });
 
 Auth::routes();
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware('auth')->group(function(){
-
-
 // Routes for catagory
 Route::get('/catagory',[CatagoryController::class,'index'])->name('catagory-index');
 Route::get('/catagory/create',[CatagoryController::class,'create'])->name('catagory-create');

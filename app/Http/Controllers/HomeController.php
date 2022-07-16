@@ -12,22 +12,22 @@ $this->middleware('auth');
 
 public function index()
 {
-    if(Auth::id())
-    {
-    $role=auth()->user()->checkRole();
-    if($role=='admin')
-    {
-    return view('admin.layout.dashboard');    
-    }
-    else if($role=='user')
-    {
-    return view('user.layout.dashboard');
-    } 
-    }
-    else
-    {
-    return redirect()->route('login');
-    }
-    }
-    
+if(Auth::id())
+{
+$role=auth()->user()->checkRole();
+if($role=='admin')
+{
+return view('admin.layout.dashboard');    
+}
+else
+{
+return view('user.layout.dashboard');
+} 
+}
+else
+{
+return view('user.layout.dashboard');
+}
+}
+
 }
